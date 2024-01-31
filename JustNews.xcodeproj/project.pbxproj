@@ -23,6 +23,7 @@
 		062B0F892B6A816400CB7511 /* NewsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B0F882B6A816400CB7511 /* NewsDataService.swift */; };
 		062B0F8C2B6A81D200CB7511 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B0F8B2B6A81D200CB7511 /* UILabelExtension.swift */; };
 		062B0F8F2B6AEC1C00CB7511 /* NewsDataServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B0F8E2B6AEC1C00CB7511 /* NewsDataServiceError.swift */; };
+		062B0F912B6AF97900CB7511 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B0F902B6AF97900CB7511 /* NewsListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		062B0F882B6A816400CB7511 /* NewsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataService.swift; sourceTree = "<group>"; };
 		062B0F8B2B6A81D200CB7511 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		062B0F8E2B6AEC1C00CB7511 /* NewsDataServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataServiceError.swift; sourceTree = "<group>"; };
+		062B0F902B6AF97900CB7511 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		062B0F8D2B6A852400CB7511 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				062B0F902B6AF97900CB7511 /* NewsListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				062B0F4B2B6A72CD00CB7511 /* AppDelegate.swift in Sources */,
 				062B0F812B6A765400CB7511 /* NewsDetailView.swift in Sources */,
 				062B0F4D2B6A72CD00CB7511 /* SceneDelegate.swift in Sources */,
+				062B0F912B6AF97900CB7511 /* NewsListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

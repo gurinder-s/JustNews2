@@ -11,7 +11,7 @@ class NewsDataService: NewsDataServiceProtocol{
     private let baseAPIUrl = "http://api.thenewsapi.com/v1/news/"
     
     func fetchTopStories(completion: @escaping (Result<[NewsModel], NewsDataServiceError>) -> Void) {
-        //Construct the URL
+        //Construct the URL. Using guard to safely unwrap other if it fails return early
         guard let url = URL(string: baseAPIUrl + Endpoint.topStories.rawValue) else {return}
         
         //URL Session data task to get data object
