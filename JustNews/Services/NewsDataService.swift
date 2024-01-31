@@ -25,23 +25,47 @@ class NewsDataService: NewsDataServiceProtocol{
                         completion(.failure(.dataNotFound))
                         return
                     }
-                    
+                    // Attempting to parse the JSON into an array of NewsModel
                     do {
                         let newsArray = try JSONDecoder().decode([NewsModel].self, from: data)
-                        completion(.success(newsArray))
+                        completion(.success(newsArray)) // return the result
                     } catch {
-                        completion(.failure(.jsonParsingError(error)))
+                        completion(.failure(.jsonParsingError(error))) // handle any parsing error
                     }
                 }
                 task.resume()
     }
     
     func fetchStoryByUUID(_ uuid: String, completion: @escaping (Result<NewsModel, NewsDataServiceError>) -> Void) {
-        <#code#>
+        // Constructing the URL for the byUUID endpoint with the given UUID
+               guard let url = URL(string: baseAPIUrl + Endpoint.byUUID.rawValue + uuid) else { return }
+               
+               // Creating a data task to fetch data from the URL
+               let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                   // Handling potential network errors
+                   if let error = error {
+                       completion(.failure(.networkError(error)))
+                       return
+                   }
+                   
+                   // Ensuring data is received
+                   guard let data = data else {
+                       completion(.failure(.dataNotFound))
+                       return
+                   }
+                   
+                   // Attempting to parse the JSON into a NewsModel
+                   do {
+                       let news = try JSONDecoder().decode(NewsModel.self, from: data)
+                       completion(.success(news)) // Returning the result
+                   } catch {
+                       completion(.failure(.jsonParsingError(error))) // Handling JSON parsing errors
+                   }
+               }
+               task.resume() // Starting the network task
+           }
     }
     
     
     
-    
-    
-}
+
